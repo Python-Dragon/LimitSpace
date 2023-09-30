@@ -25,20 +25,34 @@ public class playerMove : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(master.GetComponent<ClickMaster>().lastClicked);
-            master.GetComponent<ClickMaster>().lastClicked.gameObject.GetComponent<playerMove>().health--;
+            if (distanceTo(master.GetComponent<ClickMaster>().lastClicked.gameObject, master.GetComponent<ClickMaster>().curTurn) < 3)
+            {
+                Debug.Log(master.GetComponent<ClickMaster>().lastClicked);
+                master.GetComponent<ClickMaster>().lastClicked.gameObject.GetComponent<playerMove>().health--;
+                master.GetComponent<ClickMaster>().actions--;
+            }
+            
         }
     }
     void OnMouseDown()
     {
+        
         isMoving = true;
         master.GetComponent<ClickMaster>().lastClicked = this.gameObject.GetComponent<Collider2D>();
+        
 
     }
     float distanceTo(GameObject gameObject)
     {
         Vector2 pos1 = gameObject.transform.position;
         Vector2 pos2 = this.transform.position;
+        float distance = Mathf.Sqrt((pos1.x - pos2.x) * (pos1.x - pos2.x) + (pos1.y - pos2.y) * (pos1.y - pos2.y));
+        return distance;
+    }
+    float distanceTo(GameObject gameObject, GameObject gM)
+    {
+        Vector2 pos1 = gameObject.transform.position;
+        Vector2 pos2 = gM.transform.position;
         float distance = Mathf.Sqrt((pos1.x - pos2.x) * (pos1.x - pos2.x) + (pos1.y - pos2.y) * (pos1.y - pos2.y));
         return distance;
     }
