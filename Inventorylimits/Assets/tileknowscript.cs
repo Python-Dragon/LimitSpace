@@ -26,11 +26,21 @@ public class tileknowscript : MonoBehaviour
         Debug.Log("Hello");
         objectOn = master.GetComponent<ClickMaster>().curTurn;
         //holder = objectOn.GetComponent<playerMove>().isMoving;
+        if (distanceTo(objectOn) < 6)
+        {
+            objectOn.GetComponent<Transform>().position = new Vector3(this.transform.position.x, this.transform.position.y, -1);
+            master.GetComponent<ClickMaster>().Act();
+        }
         
-        objectOn.GetComponent<Transform>().position = new Vector3( this.transform.position.x, this.transform.position.y, -1);
-        master.GetComponent<ClickMaster>().Act();
 
 
 
+    }
+    float distanceTo(GameObject gameObject)
+    {
+        Vector2 pos1 = gameObject.transform.position;
+        Vector2 pos2 = this.transform.position;
+        float distance = Mathf.Sqrt((pos1.x - pos2.x) * (pos1.x - pos2.x) + (pos1.y - pos2.y) * (pos1.y - pos2.y));
+        return distance;
     }
 }
