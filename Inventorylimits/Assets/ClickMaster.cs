@@ -8,9 +8,11 @@ public class ClickMaster : MonoBehaviour
     public GameObject curTurn;
     public int actions = 2;
     public GameObject[] turnOrder;
+    public Collider2D lastClicked;
     // Start is called before the first frame update
     void Start()
     {
+        lastClicked = null;
         actions = 2;
         turnOrder = GameObject.FindGameObjectsWithTag("Player");
         curTurn = turnOrder[turn % turnOrder.Length];
