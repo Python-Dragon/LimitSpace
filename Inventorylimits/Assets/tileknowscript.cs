@@ -28,7 +28,9 @@ public class tileknowscript : MonoBehaviour
         //holder = objectOn.GetComponent<playerMove>().isMoving;
         
         objectOn.GetComponent<Transform>().position = new Vector3( this.transform.position.x, this.transform.position.y, -1);
+        master.GetComponent<ClickMaster>().Act();
 
-        
+
+
     }
 }

@@ -13,14 +13,30 @@ public class ClickMaster : MonoBehaviour
     {
         actions = 2;
         turnOrder = GameObject.FindGameObjectsWithTag("Player");
+        curTurn = turnOrder[turn % turnOrder.Length];
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        curTurn = turnOrder[turn % turnOrder.Length];
+        upTurn();
         
-        turn++;
-        //actions = 2;
     }
+    void upTurn()
+    {
+        curTurn = turnOrder[turn % turnOrder.Length];
+        if(actions <= 0)
+        {
+            turn++;
+            actions = 2;
+        }
+        
+    }
+     public void Act()
+    {
+        actions--;
+    }
+
+
 }
