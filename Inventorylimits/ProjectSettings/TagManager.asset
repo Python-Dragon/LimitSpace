@@ -7,6 +7,8 @@ TagManager:
   - Master
   - Obstacle
   - weapon
+  - Tile
+  - Hearts
   layers:
   - Default
   - TransparentFX
@@ -41,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Backtiles
+    uniqueID: 1353033341
+    locked: 0
   - name: inventory
     uniqueID: 536127085
     locked: 0

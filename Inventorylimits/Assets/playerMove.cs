@@ -10,9 +10,12 @@ public class playerMove : MonoBehaviour
     public GameObject master;
     public ClickMaster masterAct;
     public BasicItem selected;
+    public HealthBar healthBar;
+    public bool dead;
     // Start is called before the first frame update
     void Start()
     {
+        dead = false;
         master = GameObject.FindGameObjectWithTag("Master");
         masterAct = master.GetComponent<ClickMaster>();
     }
@@ -24,11 +27,11 @@ public class playerMove : MonoBehaviour
         {
             selected = masterAct.active.GetComponent<BasicItem>();
         }
-        Debug.Log("Here");
+        
         if (health <= 0)
         {
             Debug.Log("dies");
-            Destroy(this.gameObject);
+            Kill(this.gameObject);
             
         }
         
@@ -38,10 +41,11 @@ public class playerMove : MonoBehaviour
         
         masterAct.lastClicked = this.gameObject.GetComponent<Collider2D>();
         Debug.Log(DistanceTo(masterAct.lastClicked.gameObject, masterAct.curTurn));
-        if (DistanceTo(masterAct.lastClicked.gameObject, masterAct.curTurn) < selected.distance /* && masterAct.lastClicked.gameObject != masterAct.curTurn*/)
+        if (DistanceTo(masterAct.lastClicked.gameObject, masterAct.curTurn) < selected.distance  && masterAct.lastClicked.gameObject != masterAct.curTurn)
         {
             Debug.Log(DistanceTo(masterAct.lastClicked.gameObject, masterAct.curTurn));
             masterAct.lastClicked.gameObject.GetComponent<playerMove>().health -= selected.damage;
+            healthBar.Damage(selected.damage);
             masterAct.actions--;
             if(selected.consumable)
             {
@@ -64,5 +68,12 @@ public class playerMove : MonoBehaviour
         Vector2 pos2 = gM.transform.position;
         float distance = Mathf.Sqrt((pos1.x - pos2.x) * (pos1.x - pos2.x) + (pos1.y - pos2.y) * (pos1.y - pos2.y));
         return distance;
+    }
+    void Kill(GameObject vic)
+    {
+        dead = true;
+        vic.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        vic.gameObject.transform.position.Set(0,0,10);
+
     }
 }

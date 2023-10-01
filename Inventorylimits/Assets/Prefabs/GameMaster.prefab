@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 2549548763992731265, guid: d85622b1445656c4bbc6eca9c79eb79e, type: 3}
+  master: {fileID: 0}
   height: 10
-  width: 20
+  width: 15
   xoffset: 9.7
   yoffset: 4.5
 --- !u!114 &7133880141719951700
@@ -66,3 +67,5 @@ MonoBehaviour:
   curTurn: {fileID: 0}
   actions: 0
   turnOrder: []
+  lastClicked: {fileID: 0}
+  active: {fileID: 0}

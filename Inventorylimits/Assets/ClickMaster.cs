@@ -35,6 +35,10 @@ public class ClickMaster : MonoBehaviour
             turn++;
             actions = 2;
         }
+        if(curTurn.GetComponent<playerMove>().dead)
+        {
+            turn++;
+        }
         
     }
      public void Act()
