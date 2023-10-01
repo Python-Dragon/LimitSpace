@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,6 +31,7 @@ public class BasicItem : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        Console.WriteLine("picking up item");
         masterAct.active = this.gameObject;
         acting = true;
     }
