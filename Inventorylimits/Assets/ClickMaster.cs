@@ -9,6 +9,7 @@ public class ClickMaster : MonoBehaviour
     public int actions = 2;
     public GameObject[] turnOrder;
     public Collider2D lastClicked;
+    public GameObject active;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class ClickMaster : MonoBehaviour
         actions = 2;
         turnOrder = GameObject.FindGameObjectsWithTag("Player");
         curTurn = turnOrder[turn % turnOrder.Length];
+        active = null;
 
     }
 
