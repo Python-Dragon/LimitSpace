@@ -7,7 +7,7 @@ public class BasicItem : MonoBehaviour
     public int damage;
     public float distance;
     public bool consumable;
-    public bool active;
+    public bool acting;
     public GameObject master;
     public ClickMaster masterAct;
 
