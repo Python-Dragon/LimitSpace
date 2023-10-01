@@ -5,6 +5,7 @@ using UnityEngine;
 public class TilePlace : MonoBehaviour
 {
     public GameObject tile;
+    public GameObject master;
     public float height;
     public float width;
     public float xoffset;
@@ -12,6 +13,7 @@ public class TilePlace : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        master = GameObject.FindGameObjectWithTag("Master");
         int hold = 0;
         for(int i = 0; i < height; i++)
         {
@@ -21,6 +23,7 @@ public class TilePlace : MonoBehaviour
                 clones = Instantiate(tile, new Vector2((j - xoffset),(i - yoffset)), Quaternion.identity);
                 clones.GetComponent<tileknowscript>().tileName = hold;
                 hold++;
+                
             }
         }
     }

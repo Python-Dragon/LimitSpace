@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7976526537913177150}
   - component: {fileID: 2547457728530291155}
   - component: {fileID: 8645654322062992841}
+  - component: {fileID: -6950149922282489142}
   m_Layer: 7
   m_Name: sword
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7134751229541985673
 SpriteRenderer:
@@ -172,3 +173,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6950149922282489142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5793089930683862676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ea2ee9bd480264daa58644e5160d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  distance: 1.5
+  consumable: 0
+  acting: 0
+  used: 0
+  master: {fileID: 0}
+  masterAct: {fileID: 0}
