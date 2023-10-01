@@ -8,15 +8,19 @@ public class playerMove : MonoBehaviour
     public bool isMoving = false;
     public int health;
     public GameObject master;
+    public ClickMaster masterAct;
+    public BasicItem selected;
     // Start is called before the first frame update
     void Start()
     {
         master = GameObject.FindGameObjectWithTag("Master");
+        masterAct = master.GetComponent<ClickMaster>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        selected = masterAct.active.GetComponent<BasicItem>();
         if(health <= 0)
         {
             Debug.Log("dies");
@@ -25,11 +29,11 @@ public class playerMove : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if (distanceTo(master.GetComponent<ClickMaster>().lastClicked.gameObject, master.GetComponent<ClickMaster>().curTurn) < 3)
+            if (distanceTo(masterAct.lastClicked.gameObject, masterAct.curTurn) < selected.distance)
             {
-                Debug.Log(master.GetComponent<ClickMaster>().lastClicked);
-                master.GetComponent<ClickMaster>().lastClicked.gameObject.GetComponent<playerMove>().health--;
-                master.GetComponent<ClickMaster>().actions--;
+                Debug.Log(masterAct.lastClicked);
+                masterAct.lastClicked.gameObject.GetComponent<playerMove>().health -= selected.damage;
+                masterAct.actions--;
             }
             
         }
@@ -38,7 +42,7 @@ public class playerMove : MonoBehaviour
     {
         
         isMoving = true;
-        master.GetComponent<ClickMaster>().lastClicked = this.gameObject.GetComponent<Collider2D>();
+        masterAct.lastClicked = this.gameObject.GetComponent<Collider2D>();
         
 
     }
