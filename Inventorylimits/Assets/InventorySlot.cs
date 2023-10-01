@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class InventorySlot : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    public int x = 0;
+    public int y = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -14,16 +18,33 @@ public class InventorySlot : MonoBehaviour
         originalColor = spriteRenderer.color;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
-        Debug.Log("on trigger enter");
-        spriteRenderer.color = Color.green;
+        if (GetComponentInParent<InventoryManager>().markOccupied(x, y, coll.gameObject))
+        {
+            Debug.Log("on trigger enter");
+            spriteRenderer.color = Color.green;
+
+        }
+
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (GetComponentInParent<InventoryManager>().isOccupied(x, y))
+        {
+            spriteRenderer.color = Color.green;
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // Restore the original color when the collider exits the trigger zone
-        spriteRenderer.color = originalColor;
+        if (GetComponentInParent<InventoryManager>().isOccupied(x, y, other.gameObject))
+        {
+            spriteRenderer.color = originalColor;
+            GetComponentInParent<InventoryManager>().clearSpot(x, y);
+        }
 
     }
 }

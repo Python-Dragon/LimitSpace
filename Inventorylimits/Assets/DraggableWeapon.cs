@@ -1,31 +1,18 @@
 using UnityEngine;
 
-public class DraggableObject : MonoBehaviour
+public class DraggableWeapon : MonoBehaviour
 {
     private bool isDragging = false;
     private Vector2 offset;
+    public int size = 0;
+    public bool isMovable = true;
+    public int id = 0;
 
-    public float speed = 5.0f;
-
-    void Update()
+    public void setMovable(bool movable)
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        Vector2 movement = new Vector2(horizontalInput, verticalInput) * speed * Time.deltaTime;
-
-        // Move the GameObject using Rigidbody2D (if available)
-        Rigidbody2D rb2d = GetComponent<Rigidbody2D>();
-        if (rb2d != null)
-        {
-            rb2d.velocity = movement;
-        }
-        else
-        {
-            // If you're not using Rigidbody2D, use Transform for movement
-            transform.Translate(movement);
-        }
+        this.isMovable = movable;
     }
+
     private void OnMouseDown()
     {
         Debug.Log("on mouse down");
@@ -36,7 +23,7 @@ public class DraggableObject : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (isDragging)
+        if (isDragging && isMovable)
         {
             // Update the object's position based on the mouse movement.
             Vector2 targetPos = GetMouseWorldPos() + offset;
