@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2732502119648147720}
+  - component: {fileID: 59877470627206420}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3898515098055498432}
+  - {fileID: 3365228527381915916}
   - {fileID: 8684867936185647391}
   - {fileID: 2268694072787040019}
   - {fileID: 2679019266260538345}
@@ -36,10 +37,22 @@ Transform:
   - {fileID: 4168654821452166331}
   - {fileID: 1118077733434071356}
   - {fileID: 2181550846904922089}
-  - {fileID: 4081690482599526931}
+  - {fileID: 6753626578428066431}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &59877470627206420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4964632514572280443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53647d053f846a4ea4f15fdb16f5b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2133150511646505329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48,6 +61,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2732502119648147720}
     m_Modifications:
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_Name
       value: stone_tile (1)
@@ -149,6 +166,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2732502119648147720}
     m_Modifications:
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_Name
       value: stone_tile (8)
@@ -205,7 +230,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5982731502645879470}
   m_SourcePrefab: {fileID: 100100000, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
---- !u!1 &4081690482599526930 stripped
+--- !u!1 &851587878501762598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
   m_PrefabInstance: {fileID: 4081690482599526929}
@@ -217,7 +242,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4081690482599526930}
+  m_GameObject: {fileID: 851587878501762598}
   m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -237,7 +262,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!4 &4081690482599526931 stripped
+--- !u!4 &6753626578428066431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7285874532616206446, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
   m_PrefabInstance: {fileID: 4081690482599526929}
@@ -250,6 +275,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2732502119648147720}
     m_Modifications:
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_Name
       value: stone_tile (3)
@@ -407,12 +436,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4893982009411459724}
   m_SourcePrefab: {fileID: 100100000, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
---- !u!4 &3898515098055498432 stripped
+--- !u!4 &3365228527381915916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7285874532616206446, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
   m_PrefabInstance: {fileID: 5453597246207250786}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6949775423910667929 stripped
+--- !u!1 &8708678251627353429 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
   m_PrefabInstance: {fileID: 5453597246207250786}
@@ -424,7 +453,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6949775423910667929}
+  m_GameObject: {fileID: 8708678251627353429}
   m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -452,6 +481,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2732502119648147720}
     m_Modifications:
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_Name
       value: stone_tile (4)
@@ -553,6 +590,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2732502119648147720}
     m_Modifications:
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_Name
       value: stone_tile (5)
@@ -654,6 +699,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2732502119648147720}
     m_Modifications:
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_Name
       value: stone_tile (6)
@@ -755,6 +804,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2732502119648147720}
     m_Modifications:
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_Name
       value: stone_tile (2)
@@ -856,6 +909,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2732502119648147720}
     m_Modifications:
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 913850282929313987, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
+      propertyPath: y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3707695559701709879, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_Name
       value: stone_tile (7)
@@ -866,7 +927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7285874532616206446, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6253872
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 7285874532616206446, guid: 8409b892ef6b3c54d84e540c499357c1, type: 3}
       propertyPath: m_LocalPosition.y
