@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 246035719029976163}
   - component: {fileID: 2286829292847057625}
+  - component: {fileID: 4079655498811984979}
   m_Layer: 0
   m_Name: Player4HealthOrigin
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2286829292847057625
 SpriteRenderer:
@@ -84,3 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4079655498811984979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316308064782020144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63c8b9d454b2c24b93e7b09b83b91c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8171790291575519802, guid: d581735a9b47b214b97dcc2cb545dd1d, type: 3}
+  heart: {fileID: 2592910164386601466, guid: df47c9f8656ef1e4b84a7d9f84d75934, type: 3}
+  master: {fileID: 0}
+  masterAct: {fileID: 0}
