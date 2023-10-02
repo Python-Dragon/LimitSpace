@@ -17,6 +17,7 @@ public class Chest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawn = GameObject.FindGameObjectWithTag("Spawn");
         master = GameObject.FindGameObjectWithTag("Master");
         masterAct = master.GetComponent<ClickMaster>();
     }

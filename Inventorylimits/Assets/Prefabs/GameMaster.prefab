@@ -69,3 +69,5 @@ MonoBehaviour:
   turnOrder: []
   lastClicked: {fileID: 0}
   active: {fileID: 0}
+  tiles: []
+  chest: {fileID: 2444768391812534241, guid: b9111d90190ab674db96b3896f9cf435, type: 3}
