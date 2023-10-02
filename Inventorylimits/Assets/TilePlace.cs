@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TilePlace : MonoBehaviour
@@ -23,6 +24,7 @@ public class TilePlace : MonoBehaviour
                 clones = Instantiate(tile, new Vector2((j - xoffset),(i - yoffset)), Quaternion.identity);
                 clones.GetComponent<tileknowscript>().tileName = hold;
                 hold++;
+                master.GetComponent<ClickMaster>().tiles.Add(clones);
                 
             }
         }

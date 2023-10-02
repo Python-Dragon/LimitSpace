@@ -10,6 +10,8 @@ public class ClickMaster : MonoBehaviour
     public GameObject[] turnOrder;
     public Collider2D lastClicked;
     public GameObject active;
+    public List<GameObject> tiles;
+    public GameObject chest;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,12 @@ public class ClickMaster : MonoBehaviour
         {
             turn++;
             actions = 2;
+            if (Random.Range(0, 5) < 1)
+            {
+                //Debug.Log("Hey Listen");
+                Instantiate(chest, tiles[Random.Range(0, 150)].transform.position, Quaternion.identity);
+
+            }
         }
         if(curTurn.GetComponent<playerMove>().dead)
         {
